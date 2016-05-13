@@ -28,19 +28,11 @@ public class ColorLine extends ApplicationAdapter {
 
         time += Gdx.graphics.getDeltaTime();
 
-        if (time >0.2) {
+        if (time > 0.5f) {
             line = lineGenerator.getLine();
             time = 0;
         }
-        Gdx.gl.glClearColor(1, 1, 1, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        if(screenShot != null) {
-            batch.begin();
-            batch.draw(screenShot, 0, 0);
-            batch.end();
-        }
         line.draw();
-        screenShot = ScreenUtils.getFrameBufferTexture();
     }
 
     @Override
