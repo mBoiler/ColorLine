@@ -9,8 +9,8 @@ import java.util.Random;
  */
 public class LineGenerator {
 
-    private static final float rangeY = Gdx.graphics.getHeight()*0.1f;
-    private static final float rangeX = Gdx.graphics.getWidth()*0.1f;
+    private static final float rangeY = Gdx.graphics.getHeight()*0.05f;
+    private static final float rangeX = Gdx.graphics.getWidth()*0.05f;
     private Line line;
     private Random random;
     private float pastX;
