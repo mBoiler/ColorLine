@@ -30,7 +30,7 @@ public class Line {
 
     public void draw(){
         line.begin(ShapeRenderer.ShapeType.Line);
-        Gdx.gl20.glLineWidth(20);
+        Gdx.gl20.glLineWidth(10*Gdx.graphics.getDensity());
         line.setColor(rColor,gColor,bColor,1);
         line.line(xStart, yStart, xEnd, yEnd);
         line.end();

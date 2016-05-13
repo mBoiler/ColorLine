@@ -9,8 +9,8 @@ import java.util.Random;
  */
 public class LineGenerator {
 
-    private static final float range = 50;
-
+    private static final float rangeY = Gdx.graphics.getHeight()*0.1f;
+    private static final float rangeX = Gdx.graphics.getWidth()*0.1f;
     private Line line;
     private Random random;
     private float pastX;
@@ -51,8 +51,8 @@ public class LineGenerator {
     public boolean randWay() {
         way = random.nextInt(4);
         if (way == 0 && pastWay != 2) {
-            if (pastX + range < Gdx.graphics.getWidth()) {
-                this.x = pastX + range;
+            if (pastX + rangeX < Gdx.graphics.getWidth()) {
+                this.x = pastX + rangeX;
             } else {
                 randWay();
             }
@@ -62,8 +62,8 @@ public class LineGenerator {
         }
         if (way == 1 && pastWay != 3) {
             this.x = pastX;
-            if (pastY + range < Gdx.graphics.getHeight()) {
-                this.y = pastY + range;
+            if (pastY + rangeY < Gdx.graphics.getHeight()) {
+                this.y = pastY + rangeY;
             } else {
                 randWay();
             }
@@ -71,8 +71,8 @@ public class LineGenerator {
             return true;
         }
         if (way == 2 && pastWay != 0) {
-            if (pastX - range > 0) {
-                this.x = pastX - range;
+            if (pastX - rangeX > 0) {
+                this.x = pastX - rangeX;
             } else {
                 randWay();
             }
@@ -82,8 +82,8 @@ public class LineGenerator {
         }
         if (way == 3 && pastWay != 1) {
             this.x = pastX;
-            if (pastY - range > 0) {
-                this.y = pastY - range;
+            if (pastY - rangeY > 0) {
+                this.y = pastY - rangeY;
             } else {
                 randWay();
             }

@@ -2,14 +2,13 @@ package qm.siusiak.colorline;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.utils.ScreenUtils;
 
 public class ColorLine extends ApplicationAdapter {
 
-    SpriteBatch batch;
+    private int count;
+    private SpriteBatch batch;
     private Line line;
     private LineGenerator lineGenerator;
     private float time;
@@ -27,12 +26,13 @@ public class ColorLine extends ApplicationAdapter {
     public void render() {
 
         time += Gdx.graphics.getDeltaTime();
-
         if (time > 0.5f) {
             line = lineGenerator.getLine();
             time = 0;
+            count++;
         }
         line.draw();
+
     }
 
     @Override
