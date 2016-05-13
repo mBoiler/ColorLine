@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 /**
  * Created by parktyka2 on 2016-05-13.
  */
-public class Line extends ShapeRenderer {
+public class Line {
 
     private float xStart;
     private float yStart;
@@ -34,5 +34,18 @@ public class Line extends ShapeRenderer {
         line.setColor(rColor,gColor,bColor,1);
         line.line(xStart, yStart, xEnd, yEnd);
         line.end();
+    }
+
+    public void set(float xStart, float yStart, float xEnd, float yEnd, float rColor, float gColor, float bColor) {
+        this.xStart = xStart;
+        this.yStart = yStart;
+        this.xEnd = xEnd;
+        this.yEnd = yEnd;
+        this.rColor = rColor;
+        this.gColor = gColor;
+        this.bColor = bColor;
+    }
+    public void dispose(){
+        line.dispose();
     }
 }

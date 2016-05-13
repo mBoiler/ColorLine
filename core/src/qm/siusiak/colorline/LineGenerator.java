@@ -24,6 +24,7 @@ public class LineGenerator {
     private int way;
 
     public LineGenerator() {
+        line = new Line(pastX, pastY, x, y, r, g, b);
         random = new Random();
         pastX = Gdx.graphics.getWidth() / 2;
         pastY = Gdx.graphics.getHeight() / 2;
@@ -32,7 +33,7 @@ public class LineGenerator {
     public Line getLine() {
         randColor();
         randWay();
-        line = new Line(pastX, pastY, x, y, r, g, b);
+        line.set(pastX, pastY, x, y, r, g, b);
         pastY = y;
         pastX = x;
         return line;
