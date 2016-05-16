@@ -27,9 +27,8 @@ public class ColorLine extends ApplicationAdapter {
 
         time += Gdx.graphics.getDeltaTime();
         if (time > 0.5f) {
-            line = lineGenerator.getLine();
-            time = 0;
-            count++;
+                line = lineGenerator.getLine();
+                time = 0;
         }
         line.draw();
 
